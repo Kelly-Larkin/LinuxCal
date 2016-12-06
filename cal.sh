@@ -131,7 +131,9 @@ function todo {
     then
 	echo $notes >> $title
     fi
-    echo " " >> $title  
+    echo " " >> $title
+    cd ..
+    cd ..
 }
 
 function finished {
@@ -279,13 +281,17 @@ function todoList {
 	done
 	mv todo$folder $curFolder
 	cd ..
-	echo "VERY IMPORTANT\n" >> todoFull
+	echo "VERY IMPORTANT" >> todoFull
+	echo "" >>todoFull
 	cat todo1 >> todoFull
-	echo "SOMEWHAT IMPORTANT\n" >>todoFull
+	echo "SOMEWHAT IMPORTANT" >>todoFull
+	echo "" >>todoFull
         cat todo2 >> todoFull
-        echo "KIND OF IMPORTANT\n" >> todoFull
+        echo "KIND OF IMPORTANT" >> todoFull
+	echo "" >>todoFull
 	cat todo3 >> todoFull
-	echo "NOT IMPORTANT\n" >>todoFull
+	echo "NOT IMPORTANT" >>todoFull
+	echo "" >>todoFull
 	cat todo4 >> todoFull
 	folder=$(($folder +1))
     done
