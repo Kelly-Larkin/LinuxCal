@@ -156,7 +156,7 @@ function finished {
 	folder=$(($folder +1))
 	cd ..
     done
-    echo ""
+    echo "Removed!"
     cd ..
 }
 
@@ -197,9 +197,9 @@ function getToday {
     cd years
     year=$(date +%Y)
     cd $year
-    month=$(date +%m)
+    month=12 #$(date +%m)
     cd $month
-    day=$(date +%d)
+    day=6 #$(date +%d)
     cd $day
     touch day
     files=$(ls $(pwd) )
@@ -250,12 +250,12 @@ function getToday {
     cd ..
 
     #putting todo list and calendar in the same document
-    echo "TO DO LIST" >> tody
+    echo "TO DO LIST" >> today
     cat todoFull >> today
     echo " " >>today
     echo "CALENDAR" >>today
     cat day >> today
-    emcas today &
+    emacs today &
 }
 
 function todoList {
